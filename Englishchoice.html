@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选词填空考试重点段落背诵文档</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: #f8f9fa;
+            padding: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5364;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        .content {
+            padding: 25px;
+        }
+        .legend {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 12px 15px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+        }
+        .legend strong {
+            color: #2e7d32;
+        }
+        .unit-section {
+            margin-bottom: 30px;
+        }
+        .unit-header {
+            background: linear-gradient(90deg, #2c5364, #203a43);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .unit-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .unit-subtitle {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+        .para-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-left: 5px solid;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .para-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .para-card.prob-9 { border-left-color: #e74c3c; background: #fdf2f2; }
+        .para-card.prob-8 { border-left-color: #f39c12; background: #fffdf5; }
+        .para-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .para-num {
+            font-weight: bold;
+            color: #495057;
+            font-size: 14px;
+        }
+        .prob-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        .prob-9 .prob-badge { background: #e74c3c; }
+        .prob-8 .prob-badge { background: #f39c12; color: #333; }
+        .para-content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #212529;
+            margin-bottom: 10px;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+        .vocab-highlight {
+            background: linear-gradient(120deg, #ffeaa7 0%, #ffeaa7 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 88%;
+            padding: 0 2px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+        .para-reason {
+            font-size: 13px;
+            color: #6c757d;
+            font-style: italic;
+            padding-top: 8px;
+            border-top: 1px dashed #dee2e6;
+        }
+        .priority-section {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        .priority-section h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .priority-list {
+            list-style: none;
+        }
+        .priority-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 14px;
+        }
+        .priority-list li:last-child {
+            border-bottom: none;
+        }
+        .top-pick {
+            background: #c0392b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-right: 8px;
+        }
+        .vocab-tip {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #1565c0;
+        }
+        .vocab-tip strong {
+            color: #0d47a1;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 13px;
+        }
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 选词填空考试重点段落</h1>
+            <div class="subtitle">15选10 · 词汇搭配 · 上下文逻辑 · 考前必背</div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">单元</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">25</div>
+                <div class="stat-label">重点段</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2</div>
+                <div class="stat-label">优先级</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1</div>
+                <div class="stat-label">天</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="legend">
+                <strong>🎯 评分标准说明：</strong> 
+                <span style="color:#e74c3c">● 9分（必背）</span> 词汇搭配极丰富，语境清晰，最适合出选词填空 
+                <span style="color:#f39c12">● 8分（重点背）</span> 词汇层次多，有固定搭配和习语，考查价值高
+            </div>
+
+            <div class="vocab-tip">
+                <strong>💡 选词填空考查重点：</strong> 
+                动词短语搭配（如 embark on, stumble upon）| 形容词辨析（如 cryptic, obscure）| 
+                名词搭配（如 testing ground, comfort zone）| 上下文逻辑衔接词 | 学术/正式用语
+            </div>
+
+            <div class="priority-section">
+                <h2>🔥 终极必背 TOP 6（如果时间极紧，优先这6段）</h2>
+                <ul class="priority-list">
+                    <li><span class="top-pick">TOP 1</span> <strong>Unit 2 第4段</strong> — 攀比心理核心论述：make a living, in no uncertain terms, assessment, perceived, vicious cycle, perpetuated（9分）</li>
+                    <li><span class="top-pick">TOP 2</span> <strong>Unit 3 第7段</strong> — 鲁桂珍点燃热情：ignited, liberation, prison, glittering, crystalline, fervent, illustrious（9分）</li>
+                    <li><span class="top-pick">TOP 3</span> <strong>Unit 5 第8段</strong> — AlphaGo意义总结：thrilled, hand-crafted, figure out, general-purpose, pressing, accelerate, breakthrough, tackle（9分）</li>
+                    <li><span class="top-pick">TOP 4</span> <strong>Unit 6 第8段</strong> — 调查深入：stumbled upon, cryptic, hunted through, documentation, poring over, chronological（9分）</li>
+                    <li><span class="top-pick">TOP 5</span> <strong>Unit 5 第3段</strong> — AI挑战历史：irresistible, testing ground, tackle, thwarted, maintained an edge, agile（9分）</li>
+                    <li><span class="top-pick">TOP 6</span> <strong>Unit 3 第11段</strong> — 李约瑟使命：embark on, dispel, long-held, contribution, advanced, by far（9分）</li>
+                </ul>
+            </div>
+
+            <div class="unit-section">
+                <div class="unit-header">
+                    <div>
+                        <div class="unit-title">Unit 1</div>
+                        <div class="unit-subtitle">How My Working Holiday Changed Me</div>
+                    </div>
+                    <div style="font-size:14px;">2段重点</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第4段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">I have always been a quiet, shy person and meeting people and making friends has always been a constant struggle. I've always had a few friends but never a large social circle. Then I moved to Vancouver and began working at Starbucks. My co-workers were so welcoming and it wasn't long before we were meeting up after work for dinner, ladies night and sightseeing excursions. I taught them an Australian word of the day and they helped me understand the Canadian lingo, eh? Oh, how I laughed whenever someone ended their sentence with those two letters.</div>
+                    <div class="para-reason">💡 重点词汇：constant struggle, social circle, welcoming, excursions, lingo — 词汇搭配丰富，语境清晰</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第12段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">I gained confidence with each stop and each hostel. I adored seeing a new city every few days. I loved walking around and capturing places with my new DSLR. I was proud of myself for constantly stepping out of my comfort zone and embracing the unknown. This solo adventure changed me in a lot of good ways, including ensuring my wanderlust is still running strong through my veins.</div>
+                    <div class="para-reason">💡 重点词汇：adored, capturing, comfort zone, embracing, wanderlust, veins — 词汇层次丰富，适合挖空</div>
+                </div>
+            </div>
+
+            <div class="unit-section">
+                <div class="unit-header">
+                    <div>
+                        <div class="unit-title">Unit 2</div>
+                        <div class="unit-subtitle">Who Are the Joneses and Why Are We Trying to Keep Up with Them?</div>
+                    </div>
+                    <div style="font-size:14px;">5段重点</div>
+                </div>
+
+                <div class="para-card prob-9">
+                    <div class="para-header">
+                        <span class="para-num">第4段</span>
+                        <span class="prob-badge">考试概率 9/10</span>
+                    </div>
+                    <div class="para-content">Prior to the late 1880s, most of us were so busy trying to make a living that we didn't care what the Joneses were doing, nor did we know, for that matter. But with the birth of mass media, suddenly we were being told in no uncertain terms that not only were the Joneses far better than we were, but also that we should do something about it. You see, we didn't know that we weren't good enough until someone told us. And much of that assessment was, and still is, based on a perceived lack of things we're told we should want or have. 'Fortunately,' those same magazines provided us with ready solutions in the form of advertisements for products that would 'catch us up' to the Joneses. Of course, by the time we got there, the Joneses were ahead of us again (kind of like how your brand-new computer is out of date as soon as you walk out of the store) and the vicious cycle of keeping up with the Joneses perpetuated itself ad infinitum.</div>
+                    <div class="para-reason">💡 重点词汇：make a living, in no uncertain terms, assessment, perceived, ready solutions, catch us up, out of date, vicious cycle, perpetuated — 超丰富词汇和搭配，最适合选词填空</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第2段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">As it turns out, the phrase 'keeping up with the Joneses' derives from a cartoon strip of that name that launched in 1913 and ran for 26 years. In the strip, creator 'Pop' Momand poked fun at our need to do things in order to impress other people. I'd love to say that need vanished when the last episode of that comic strip ran, but alas, it seems to have only gotten worse. These days we don't care about the Joneses, we're trying to keep up with the Kardashians. (Thank God I don't have cable TV!)</div>
+                    <div class="para-reason">💡 重点词汇：derives from, launched, poked fun at, impress, vanished, episode, alas — 词汇搭配极丰富，适合挖空</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第6段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">I think Brené Brown puts it best when she says, 'I see the cultural messaging everywhere that says that an ordinary life is a meaningless life.' (Daring Greatly, p. 23). She calls this the 'never enough' problem and attributes it, for most of us, to a singular early childhood event that perpetuated our need to be a people-pleaser — at least, until someone tells us we can stop.</div>
+                    <div class="para-reason">💡 重点词汇：puts it best, cultural messaging, attributes, singular, perpetuated, people-pleaser — 学术词汇丰富</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第11段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">More is never enough. If you are trying to earn money for the sake of having more money, you will never be satisfied. Do some soul searching and ask yourself what 'enough' really looks like. If you can't put a cap on it, you're chasing the wind. Learn to be happy with what you have. Just remember that if you can't buy it outright, you can't afford it. And it won't really be yours if you buy it on credit.</div>
+                    <div class="para-reason">💡 重点词汇：for the sake of, soul searching, put a cap on, chasing the wind, outright, on credit — 习语和短语极丰富</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第12段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">Contentment comes from within. It's easy to blame feelings of discontentment on outside sources like money or stuff, but true contentment and lasting joy don't come from anything money can buy. Think of the times you've felt most satisfied in life. Think of the moments you look back on as your fondest memories. Would you trade those for a pile of cash?</div>
+                    <div class="para-reason">💡 重点词汇：contentment, discontentment, sources, lasting, fondest, trade — 抽象对比词汇</div>
+                </div>
+            </div>
+
+            <div class="unit-section">
+                <div class="unit-header">
+                    <div>
+                        <div class="unit-title">Unit 3</div>
+                        <div class="unit-subtitle">Joseph Needham and 'China Firsts'</div>
+                    </div>
+                    <div style="font-size:14px;">5段重点</div>
+                </div>
+
+                <div class="para-card prob-9">
+                    <div class="para-header">
+                        <span class="para-num">第7段</span>
+                        <span class="prob-badge">考试概率 9/10</span>
+                    </div>
+                    <div class="para-content">Lu ignited his intense passion for studying Chinese characters, which he went on to describe as, '...A liberation, like going for a swim on a hot day. [For it gets you] entirely out of the prison of alphabetical words and into the glittering, crystalline world of ideographic characters.' Lu also fired Needham's fervent interest in China's long and illustrious history in numerous fields of science.</div>
+                    <div class="para-reason">💡 重点词汇：ignited, passion, liberation, prison, glittering, crystalline, ideographic, fired, fervent, illustrious — 文学性词汇极丰富，比喻表达多，最适合选词填空</div>
+                </div>
+
+                <div class="para-card prob-9">
+                    <div class="para-header">
+                        <span class="para-num">第11段</span>
+                        <span class="prob-badge">考试概率 9/10</span>
+                    </div>
+                    <div class="para-content">This was the 'China first' that inspired Joseph Needham to embark on what would be a more than 50-year mission to dispel a long-held view in the West that China had neither science nor made any contribution to modern science, and to persuade the world that China had been the home of the world's most advanced ancient civilisation by far.</div>
+                    <div class="para-reason">💡 重点词汇：embark on, dispel, long-held, contribution, advanced, by far — 核心学术动词和形容词</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第4段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">This would not have worried Joseph Needham (1900–1995) in the slightest. He was fully focused on one, albeit Herculean task: To give China the long-overdue respect it deserves for its scientific contributions to humanity.</div>
+                    <div class="para-reason">💡 重点词汇：in the slightest, albeit, Herculean, long-overdue, deserves, contributions — 高级词汇密集</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第8段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">With his strong scientific background and language proficiency, Needham was dispatched by the British government in late 1942 to head the British Scientific Mission in China. For the next six years he traveled around the country by all means of transportation, including jeeps, junks, wheelbarrows, camels, litters and goatskin rafts, collecting obscure, secondhand books on traditional science that became the basis of his extensive and unusual personal library.</div>
+                    <div class="para-reason">💡 重点词汇：proficiency, dispatched, head (v.), obscure, secondhand, extensive — 多义词和正式用语</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第13段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">Back in Cambridge, Joseph Needham began to type the pages that would become the monumental Science and Civilisation in China. He was surrounded by mountains of beloved books from numerous Chinese sources. A kid in the world's biggest and best sweet shop: 'What a cave of glittering treasures was opened up! ... One after another, extraordinary inventions and discoveries clearly appeared... often, indeed generally, long preceding the parallel, or adopted inventions and discoveries of Europe.... Wherever one looked, there was first after first.'</div>
+                    <div class="para-reason">💡 重点词汇：monumental, surrounded by, beloved, numerous, glittering, preceding, parallel — 描述性词汇丰富</div>
+                </div>
+            </div>
+
+            <div class="unit-section">
+                <div class="unit-header">
+                    <div>
+                        <div class="unit-title">Unit 4</div>
+                        <div class="unit-subtitle">Is 30 the New 20 for Young Adults?</div>
+                    </div>
+                    <div style="font-size:14px;">4段重点</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第2段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">Fifty years ago the median age of entering marriage in the U.S. was 20 for women and 22 for men; today it's 26 for women and 28 for men, and still rising. In 1960 only 33 percent of young people went to college; today, 69 percent of high school graduates enter college the next year. Women used to have few options besides wife and mother; today they exceed men in college enrollment and are equal to men in law school, medical school and business school enrollment. Young Americans expect a lot more out of work than their parents or grandparents did. They change jobs an average of seven times from age 20 to 29 as they search for work that is personally fulfilling, not just a job but an adventure.</div>
+                    <div class="para-reason">💡 重点词汇：median, options, exceed, enrollment, fulfilling — 数据对比中的学术词汇</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第11段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">But there's a downside as well. Some emerging adults feel overwhelmed by the challenges of this life stage and drift along aimlessly, waiting for something to happen rather than making it happen. Sometimes parents are surprised and dismayed to find that the emotional and financial responsibilities of parenting last for many years longer than they had expected.</div>
+                    <div class="para-reason">💡 重点词汇：downside, overwhelmed, drift along, aimlessly, dismayed — 负面情感词汇丰富</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第12段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">So, what should parents do? We think it's wise to be patient with emerging adults, as long as they seem to have a Plan with a capital P and are trying to move it along. Try to put aside the timetable that applied decades ago and respect the longer road to adulthood they are traveling today. Encourage them and provide support when they seem open to it, but learn when to step back and let them make their way — including their mistakes — on their own. It's a delicate balance.</div>
+                    <div class="para-reason">💡 重点词汇：with a capital P, put aside, applied, step back, make their way, delicate balance — 习语和隐喻丰富</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第13段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">Above all, parents, it can help to realize that the winding road to adulthood is the new normal. You may be relieved to learn that nearly everyone grows out of emerging adulthood and, by about age 30, takes on the roles of young adulthood — marriage, parenthood and a stable job. Seeing emerging adulthood as a normal stage of life today can help ease our anxiety and maybe even allow us to celebrate our emerging adults' energy, optimism and appetite for life.</div>
+                    <div class="para-reason">💡 重点词汇：winding road, new normal, relieved, grows out of, takes on, ease, appetite — 比喻和抽象词汇</div>
+                </div>
+            </div>
+
+            <div class="unit-section">
+                <div class="unit-header">
+                    <div>
+                        <div class="unit-title">Unit 5</div>
+                        <div class="unit-subtitle">AlphaGo: Using Machine Learning to Master the Ancient Game of Go</div>
+                    </div>
+                    <div style="font-size:14px;">5段重点</div>
+                </div>
+
+                <div class="para-card prob-9">
+                    <div class="para-header">
+                        <span class="para-num">第3段</span>
+                        <span class="prob-badge">考试概率 9/10</span>
+                    </div>
+                    <div class="para-content">This complexity is what makes Go hard for computers to play, and therefore an irresistible challenge to artificial intelligence (AI) researchers, who use games as a testing ground to invent smart, flexible algorithms that can tackle problems, sometimes in ways similar to humans. The first game mastered by a computer was noughts and crosses (also known as tic-tac-toe) in 1952. Then fell checkers in 1994. In 1997 Deep Blue famously beat Garry Kasparov at chess. It's not limited to board games either — the Watson computer system bested two champions at Jeopardy in 2011, and in 2014 our own algorithms learned to play dozens of computer games just from the raw pixel inputs. But to date, Go has thwarted AI researchers; computers still only play Go as well as amateurs. In other words, machines have topped the best humans at most games held up as measures of human intellect. But with Go, human grandmasters have maintained an edge over even the most agile computing systems.</div>
+                    <div class="para-reason">💡 重点词汇：irresistible, testing ground, tackle, mastered, famously, bested, to date, thwarted, amateurs, topped, held up as, maintained an edge, agile — 动词和短语极丰富，科技文典型</div>
+                </div>
+
+                <div class="para-card prob-9">
+                    <div class="para-header">
+                        <span class="para-num">第8段</span>
+                        <span class="prob-badge">考试概率 9/10</span>
+                    </div>
+                    <div class="para-content">We are thrilled to have mastered Go and thus achieved one of the grand challenges of AI. However, the most significant aspect of all this for us is that AlphaGo isn't just an 'expert' system built with hand-crafted rules; instead it uses general machine learning techniques to figure out for itself how to win at Go. While games are the perfect platform for developing and testing AI algorithms quickly and efficiently, ultimately we want to apply these techniques to important real-world problems. Because the methods we've used are general-purpose, our hope is that one day they could be extended to help us address some of society's toughest and most pressing problems, from climate modeling to complex disease analysis. We believe these techniques can accelerate scientific research. Scientists working alongside AI systems that can home in on areas of research are very likely to be fruitful. The same techniques could even suggest a way forward that might point the human expert to a breakthrough. We're excited to see what we can use this technology to tackle next!</div>
+                    <div class="para-reason">💡 重点词汇：thrilled, grand challenges, significant aspect, hand-crafted, figure out, general-purpose, extended, address, pressing, accelerate, home in on, fruitful, breakthrough, tackle — 科技文核心词汇密集，最适合选词填空</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第1段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">The game of Go originated in China more than 2,500 years ago. Confucius wrote about the game, and it is considered one of the four essential arts required of any true Chinese scholar. Played by more than 40 million people worldwide, the rules of the game are simple: Players take turns to place black or white stones on a board, trying to capture the opponent's stones or surround empty space to make points of territory. The game is played primarily through intuition and feel, and because of its beauty, subtlety and intellectual depth it has captured the human imagination for centuries.</div>
+                    <div class="para-reason">💡 重点词汇：originated, essential, required, opponent, territory, intuition, subtlety, intellectual depth, captured — 词汇层次丰富</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第4段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">Traditional AI methods — which construct a search tree over all possible positions — don't have a chance in Go. So when we set out to crack Go, we took a different approach. We built a system, AlphaGo, that combines an advanced tree search with deep neural networks. These neural networks take a description of the Go board as an input and process it through 12 different network layers containing millions of neuron-like connections. One neural network, the 'policy network,' selects the next move to play. The other neural network, the 'value network,' predicts the winner of the game.</div>
+                    <div class="para-reason">💡 重点词汇：construct, set out to, crack, combines, neural networks, input, process, predicts — 科技术语和动词</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第5段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">We trained the neural networks on 30 million moves from games played by human experts, until it could predict the human move 57 percent of the time (the previous record before AlphaGo was 44 percent). But our goal is to get the better of top human players, not just mimic them. To do this, AlphaGo learned to discover new strategies for itself, by playing thousands of games between its neural networks, and adjusting the connections using a trial-and-error process known as reinforcement learning. Of course, all of this requires a huge amount of computing power, so we made extensive use of the cloud platform.</div>
+                    <div class="para-reason">💡 重点词汇：trained, predict, get the better of, mimic, strategies, trial-and-error, reinforcement learning, computing power, extensive — 科技动词和名词</div>
+                </div>
+            </div>
+
+            <div class="unit-section">
+                <div class="unit-header">
+                    <div>
+                        <div class="unit-title">Unit 6</div>
+                        <div class="unit-subtitle">The Lawyer Who Became DuPont's Worst Nightmare</div>
+                    </div>
+                    <div style="font-size:14px;">4段重点</div>
+                </div>
+
+                <div class="para-card prob-9">
+                    <div class="para-header">
+                        <span class="para-num">第8段</span>
+                        <span class="prob-badge">考试概率 9/10</span>
+                    </div>
+                    <div class="para-content">Bilott stumbled upon a letter DuPont had sent to the E.P.A. that mentioned a substance at the landfill with a cryptic name: 'PFOA.' He hunted through references and learned that it was short for perfluorooctanoic acid. But besides that, he could find nothing. He asked DuPont to share all documentation related to the substance; DuPont refused. In the fall of 2000, Bilott requested a court order to force them. The order was granted. Dozens of boxes containing thousands of unorganized documents began to arrive at Bilott's office. There were more than 110,000 pages in all, some half a century old. Bilott spent the next few months on the floor of his office, poring over the documents and arranging them in chronological order.</div>
+                    <div class="para-reason">💡 重点词汇：stumbled upon, cryptic, hunted through, short for, documentation, requested, granted, dozens of, unorganized, in all, poring over, chronological — 调查叙事词汇极丰富，动词和短语搭配多</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第1段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">Rob Bilott received a call from a cattle farmer. The farmer, Wilbur Tennant of Parkersburg, W.Va., said that his cows were dying left and right. He believed that the DuPont chemical company, which until recently operated a site in Parkersburg, was responsible. Tennant had tried to seek help locally, but DuPont just about owned the entire town. He had been spurned not only by Parkersburg's lawyers but also by its politicians, journalists, doctors and veterinarians. He reached out to Bilott because he knew the latter's grandmother.</div>
+                    <div class="para-reason">💡 重点词汇：dying left and right, operated a site, responsible, seek help, just about, spurned, reached out — 叙事词汇丰富</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第10段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">The story began in 1951, when DuPont started purchasing PFOA from 3M for use in the manufacturing of Teflon. Though PFOA was not classified by the government as a hazardous substance, 3M sent DuPont recommendations on how to dispose of it. It was to be incinerated or sent to chemical-waste facilities, not to be flushed into surface water or sewers. But over the decades that followed, DuPont pumped hundreds of thousands of pounds of PFOA powder through the outfall pipes of its factory into the Ohio River.</div>
+                    <div class="para-reason">💡 重点词汇：purchasing, classified, hazardous, recommendations, dispose of, incinerated, facilities, flushed, surface water, outfall pipes — 化工专业词汇</div>
+                </div>
+
+                <div class="para-card prob-8">
+                    <div class="para-header">
+                        <span class="para-num">第15段</span>
+                        <span class="prob-badge">考试概率 8/10</span>
+                    </div>
+                    <div class="para-content">He spent the following months drafting a public brief against DuPont. It was 972 pages long, including 136 attached exhibits. He demanded immediate action to regulate PFOA and provide clean water to those living near the factory. DuPont reacted quickly, requesting a gag order to block Bilott from providing the information he had discovered in the Tennant case to the government. A federal court denied it. Bilott sent his entire case file to the E.P.A.</div>
+                    <div class="para-reason">💡 重点词汇：drafting, brief, exhibits, demanded, regulate, reacted, requesting, block, denied — 法律和动作词汇密集</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>📌 建议背诵策略：先背9分段落（词汇最丰富），再背8分段落 | 重点记忆动词短语和固定搭配</p>
+            <p>⏰ 考试前一天：通读所有重点段落，标记不熟悉的词汇，强化记忆搭配用法</p>
+            <p>🍀 祝考试顺利！</p>
+        </div>
+    </div>
+</body>
+</html>

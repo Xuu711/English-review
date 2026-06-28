@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作文考试备考宝典 - 句型·词汇·结构全攻略</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 35px;
+            text-align: center;
+        }
+        .header h1 { font-size: 30px; margin-bottom: 10px; }
+        .header .subtitle { font-size: 15px; opacity: 0.9; }
+        .content { padding: 25px; }
+
+        /* 导航标签 */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .nav-tab {
+            padding: 10px 18px;
+            background: #e9ecef;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+            transition: all 0.3s;
+            border: none;
+        }
+        .nav-tab:hover, .nav-tab.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .section { display: none; }
+        .section.active { display: block; }
+
+        .section-title {
+            font-size: 22px;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        /* 主题预测卡片 */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .theme-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            padding: 18px;
+            border-left: 4px solid #667eea;
+        }
+        .theme-card h3 {
+            font-size: 16px;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+        .theme-card .theme-list {
+            list-style: none;
+            font-size: 13px;
+            color: #495057;
+        }
+        .theme-card .theme-list li {
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+        .theme-card .theme-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+        .theme-card .prob-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #667eea;
+            color: white;
+            border-radius: 10px;
+            font-size: 11px;
+            margin-top: 8px;
+        }
+
+        /* 句型模板 */
+        .template-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+        }
+        .template-box h4 {
+            color: #0f3460;
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .template-box h4 .icon { font-size: 20px; }
+        .template-item {
+            background: white;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-left: 3px solid #38ef7d;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .template-item .english {
+            color: #1a1a2e;
+            font-family: Georgia, serif;
+            margin-bottom: 5px;
+        }
+        .template-item .chinese {
+            color: #6c757d;
+            font-size: 13px;
+        }
+        .template-item .usage {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* 词汇表 */
+        .vocab-section {
+            margin-bottom: 25px;
+        }
+        .vocab-section h4 {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px;
+        }
+        .vocab-item {
+            background: #f8f9fa;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            border-left: 3px solid #ffc107;
+        }
+        .vocab-item .word {
+            font-weight: bold;
+            color: #1a1a2e;
+            font-family: Georgia, serif;
+        }
+        .vocab-item .meaning {
+            color: #6c757d;
+            font-size: 12px;
+        }
+
+        /* 黄金句型 */
+        .golden-sentence {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 4px solid #f39c12;
+        }
+        .golden-sentence .en {
+            font-family: Georgia, serif;
+            color: #1a1a2e;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 6px;
+        }
+        .golden-sentence .cn {
+            color: #6c757d;
+            font-size: 13px;
+        }
+        .golden-sentence .source {
+            color: #e74c3c;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        /* 作文结构 */
+        .structure-box {
+            background: #e8f5e9;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .structure-box h4 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        .structure-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+        .structure-step .num {
+            background: #4caf50;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+        .structure-step .text {
+            font-size: 14px;
+            color: #333;
+        }
+        .structure-step .text strong {
+            color: #1a1a2e;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 13px;
+        }
+
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; }
+            .nav-tabs { display: none; }
+            .section { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 作文考试备考宝典</h1>
+            <div class="subtitle">句型模板 · 重点词汇 · 黄金句型 · 作文结构 · 主题预测</div>
+        </div>
+
+        <div class="content">
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="showSection('themes')">📌 主题预测</button>
+                <button class="nav-tab" onclick="showSection('templates')">✍️ 万能句型</button>
+                <button class="nav-tab" onclick="showSection('vocab')">🎯 重点词汇</button>
+                <button class="nav-tab" onclick="showSection('golden')">⭐ 黄金句型</button>
+                <button class="nav-tab" onclick="showSection('structure')">🏗️ 作文结构</button>
+            </div>
+
+            <!-- 主题预测 -->
+            <div id="themes" class="section active">
+                <h2 class="section-title">📌 作文主题预测（按考试概率排序）</h2>
+
+                <div class="theme-grid">
+                    <div class="theme-card">
+                        <h3>🔥 超高概率主题</h3>
+                        <ul class="theme-list">
+                            <li>个人成长与自我认知</li>
+                            <li>走出舒适圈/勇于尝试</li>
+                            <li>旅行的意义与价值</li>
+                            <li>物质与幸福的关系</li>
+                            <li>内心满足 vs 外在追求</li>
+                        </ul>
+                        <span class="prob-tag">考试概率 90%</span>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>🔥 高概率主题</h3>
+                        <ul class="theme-list">
+                            <li>科技与传统文化的融合</li>
+                            <li>人工智能的发展与影响</li>
+                            <li>青年成长与人生选择</li>
+                            <li>代际差异与理解</li>
+                            <li>正义、勇气与社会责任</li>
+                        </ul>
+                        <span class="prob-tag">考试概率 75%</span>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>📍 中等概率主题</h3>
+                        <ul class="theme-list">
+                            <li>中西文化交流与互鉴</li>
+                            <li>学术追求与坚持</li>
+                            <li>环保与企业责任</li>
+                            <li>独立生活与延迟成年</li>
+                            <li>消费主义批判</li>
+                        </ul>
+                        <span class="prob-tag">考试概率 50%</span>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>📍 可能关联主题</h3>
+                        <ul class="theme-list">
+                            <li>跨文化体验与包容</li>
+                            <li>工作的意义与价值</li>
+                            <li>父母与子女的沟通</li>
+                            <li>从失败中学习</li>
+                            <li>追随内心 vs 迎合他人</li>
+                        </ul>
+                        <span class="prob-tag">考试概率 35%</span>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">💡</span> 主题关联分析</h4>
+                    <div class="template-item">
+                        <div class="english"><strong>Unit 1 + Unit 4 组合：</strong> 青年成长、人生探索、独立与责任</div>
+                        <div class="usage">适合写"我的大学生活""成长中的困惑与选择"等题目</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english"><strong>Unit 2 + Unit 6 组合：</strong> 价值观、正义、社会责任、内心追求</div>
+                        <div class="usage">适合写"什么是真正的成功""我眼中的正义"等题目</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english"><strong>Unit 3 + Unit 5 组合：</strong> 文化自信、科技与传统、创新突破</div>
+                        <div class="usage">适合写"科技与传统""中国文化的魅力""人工智能的未来"等题目</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 万能句型 -->
+            <div id="templates" class="section">
+                <h2 class="section-title">✍️ 万能句型模板（直接套用）</h2>
+
+                <div class="template-box">
+                    <h4><span class="icon">🚪</span> 开头句型（引出话题）</h4>
+                    <div class="template-item">
+                        <div class="english">In contemporary society, the issue of [话题] has sparked widespread debate.</div>
+                        <div class="chinese">在当代社会，[话题]问题引发了广泛讨论。</div>
+                        <div class="usage">适用于社会热点类作文</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">When it comes to [话题], opinions vary from person to person.</div>
+                        <div class="chinese">当谈到[话题]时，人们的看法因人而异。</div>
+                        <div class="usage">适用于观点对比类作文</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">It is universally acknowledged that [普遍观点]. However, [转折观点].</div>
+                        <div class="chinese">人们普遍认为[普遍观点]。然而，[转折观点]。</div>
+                        <div class="usage">适用于辩证分析类作文</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">The rapidity of [某领域] progress has been nothing short of astounding, yet it raises important questions about [相关问题].</div>
+                        <div class="chinese">[某领域]的进步之快令人震惊，但它也引发了关于[相关问题]的重要思考。</div>
+                        <div class="usage">改编自Unit 3，适用于科技/发展类作文</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">My experience with [经历] changed my perspective on [主题] and helped me become a better version of myself.</div>
+                        <div class="chinese">我的[经历]改变了我对[主题]的看法，帮助我成为了更好的自己。</div>
+                        <div class="usage">改编自Unit 1，适用于个人经历类作文</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">💭</span> 提出观点句型</h4>
+                    <div class="template-item">
+                        <div class="english">From my perspective, [观点] is not merely a choice but a necessity for [结果].</div>
+                        <div class="chinese">在我看来，[观点]不仅是一种选择，更是实现[结果]的必要条件。</div>
+                        <div class="usage">强观点表达</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">I am firmly convinced that [观点], for it is [原因] that truly matters.</div>
+                        <div class="chinese">我坚信[观点]，因为真正重要的是[原因]。</div>
+                        <div class="usage">强调句型，增强说服力</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">While some argue that [反对观点], I believe that [自己的观点] holds more weight.</div>
+                        <div class="chinese">虽然有人认为[反对观点]，但我相信[自己的观点]更有分量。</div>
+                        <div class="usage">让步转折，展现思辨能力</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">The key to [目标] lies not in [表面因素], but in [核心因素].</div>
+                        <div class="chinese">实现[目标]的关键不在于[表面因素]，而在于[核心因素]。</div>
+                        <div class="usage">改编自Unit 2，适用于价值观类作文</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">🔄</span> 过渡句型</h4>
+                    <div class="template-item">
+                        <div class="english">Having discussed [前文内容], we now turn to [下文内容].</div>
+                        <div class="chinese">在讨论了[前文内容]之后，我们现在转向[下文内容]。</div>
+                        <div class="usage">段落间过渡</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">This brings us to the core of the matter: [核心问题].</div>
+                        <div class="chinese">这就把我们带到了问题的核心：[核心问题]。</div>
+                        <div class="usage">改编自Unit 2，深入分析</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">The significance of [主题] extends far beyond [表面意义]; it is deeply rooted in [深层意义].</div>
+                        <div class="chinese">[主题]的意义远不止[表面意义]；它深深植根于[深层意义]。</div>
+                        <div class="usage">深化论述</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">To put it another way, [换一种说法的观点].</div>
+                        <div class="chinese">换句话说，[换一种说法的观点]。</div>
+                        <div class="usage">解释说明</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">By the same token, [并列观点].</div>
+                        <div class="chinese">出于同样的原因，[并列观点]。</div>
+                        <div class="usage">并列论证</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">🎯</span> 举例论证句型</h4>
+                    <div class="template-item">
+                        <div class="english">A case in point is [例子], which vividly illustrates that [观点].</div>
+                        <div class="chinese">一个恰当的例子是[例子]，它生动地说明了[观点]。</div>
+                        <div class="usage">举例论证</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">History is replete with examples of [现象], such as [例子1] and [例子2].</div>
+                        <div class="chinese">历史上充满了[现象]的例子，比如[例子1]和[例子2]。</div>
+                        <div class="usage">历史例证</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">Take [人物/事物] for example. [具体描述]. This clearly demonstrates that [观点].</div>
+                        <div class="chinese">以[人物/事物]为例。[具体描述]。这清楚地证明了[观点]。</div>
+                        <div class="usage">具体例子展开</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">✅</span> 总结观点句型</h4>
+                    <div class="template-item">
+                        <div class="english">In light of the above analysis, it is safe to conclude that [总结观点].</div>
+                        <div class="chinese">基于以上分析，我们可以有把握地得出结论：[总结观点]。</div>
+                        <div class="usage">正式总结</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">All things considered, [主题] is not about [表面], but about [本质].</div>
+                        <div class="chinese">总而言之，[主题]不在于[表面]，而在于[本质]。</div>
+                        <div class="usage">改编自Unit 2，升华主题</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">The evidence overwhelmingly supports the view that [观点].</div>
+                        <div class="chinese">证据压倒性地支持[观点]这一看法。</div>
+                        <div class="usage">强总结</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">🏁</span> 结尾句型</h4>
+                    <div class="template-item">
+                        <div class="english">Only by [行动] can we [结果], and ultimately [更高目标].</div>
+                        <div class="chinese">只有通过[行动]，我们才能[结果]，并最终[更高目标]。</div>
+                        <div class="usage">倒装强调，呼吁行动</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">It is high time that we [行动], for [原因]. After all, [点睛句].</div>
+                        <div class="chinese">是时候[行动]了，因为[原因]。毕竟，[点睛句]。</div>
+                        <div class="usage">虚拟语气，增强紧迫感</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">As we navigate the winding road of [主题], let us remember that [核心观点].</div>
+                        <div class="chinese">当我们在[主题]的曲折道路上前行时，让我们记住[核心观点]。</div>
+                        <div class="usage">改编自Unit 4，诗意结尾</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english">The world needs not only [物质/表面], but also [精神/本质] — the most renowned bridge builder between [A] and [B].</div>
+                        <div class="chinese">世界不仅需要[物质/表面]，更需要[精神/本质]——连接[A]与[B]的最著名桥梁。</div>
+                        <div class="usage">改编自Unit 3，高度升华</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 重点词汇 -->
+            <div id="vocab" class="section">
+                <h2 class="section-title">🎯 作文重点词汇（按主题分类）</h2>
+
+                <div class="vocab-section">
+                    <h4>🌱 个人成长类（Unit 1 + Unit 4）</h4>
+                    <div class="vocab-grid">
+                        <div class="vocab-item"><span class="word">reflect on</span> <span class="meaning">反思</span></div>
+                        <div class="vocab-item"><span class="word">step out of comfort zone</span> <span class="meaning">走出舒适圈</span></div>
+                        <div class="vocab-item"><span class="word">embrace the unknown</span> <span class="meaning">拥抱未知</span></div>
+                        <div class="vocab-item"><span class="word">personal gain</span> <span class="meaning">个人收获</span></div>
+                        <div class="vocab-item"><span class="word">zest for life</span> <span class="meaning">对生活的热情</span></div>
+                        <div class="vocab-item"><span class="word">sense of adventure</span> <span class="meaning">冒险精神</span></div>
+                        <div class="vocab-item"><span class="word">personally fulfilling</span> <span class="meaning">个人满足的</span></div>
+                        <div class="vocab-item"><span class="word">emerging adulthood</span> <span class="meaning">成人形成期</span></div>
+                        <div class="vocab-item"><span class="word">identity exploration</span> <span class="meaning">身份探索</span></div>
+                        <div class="vocab-item"><span class="word">delicate balance</span> <span class="meaning">微妙的平衡</span></div>
+                        <div class="vocab-item"><span class="word">new normal</span> <span class="meaning">新常态</span></div>
+                        <div class="vocab-item"><span class="word">appetite for life</span> <span class="meaning">对生活的渴望</span></div>
+                    </div>
+                </div>
+
+                <div class="vocab-section">
+                    <h4>💎 价值观/幸福类（Unit 2）</h4>
+                    <div class="vocab-grid">
+                        <div class="vocab-item"><span class="word">strive for</span> <span class="meaning">追求</span></div>
+                        <div class="vocab-item"><span class="word">content with</span> <span class="meaning">满足于</span></div>
+                        <div class="vocab-item"><span class="word">vicious cycle</span> <span class="meaning">恶性循环</span></div>
+                        <div class="vocab-item"><span class="word">people-pleaser</span> <span class="meaning">讨好他人者</span></div>
+                        <div class="vocab-item"><span class="word">soul searching</span> <span class="meaning">自我反省</span></div>
+                        <div class="vocab-item"><span class="word">chasing the wind</span> <span class="meaning">追风（徒劳）</span></div>
+                        <div class="vocab-item"><span class="word">contentment</span> <span class="meaning">满足感</span></div>
+                        <div class="vocab-item"><span class="word">lasting joy</span> <span class="meaning">持久的喜悦</span></div>
+                        <div class="vocab-item"><span class="word">buy into</span> <span class="meaning">接受（观念）</span></div>
+                        <div class="vocab-item"><span class="word">put a cap on</span> <span class="meaning">设定上限</span></div>
+                        <div class="vocab-item"><span class="word">on credit</span> <span class="meaning">赊账</span></div>
+                        <div class="vocab-item"><span class="word">outright</span> <span class="meaning">直接地/完全地</span></div>
+                    </div>
+                </div>
+
+                <div class="vocab-section">
+                    <h4>🏛️ 文化自信/学术类（Unit 3）</h4>
+                    <div class="vocab-grid">
+                        <div class="vocab-item"><span class="word">nothing short of</span> <span class="meaning">简直是/无异于</span></div>
+                        <div class="vocab-item"><span class="word">long-overdue</span> <span class="meaning">早该到来的</span></div>
+                        <div class="vocab-item"><span class="word">Herculean task</span> <span class="meaning">艰巨的任务</span></div>
+                        <div class="vocab-item"><span class="word">ignite passion</span> <span class="meaning">点燃热情</span></div>
+                        <div class="vocab-item"><span class="word">fervent interest</span> <span class="meaning">狂热的兴趣</span></div>
+                        <div class="vocab-item"><span class="word">illustrious history</span> <span class="meaning">辉煌的历史</span></div>
+                        <div class="vocab-item"><span class="word">embark on</span> <span class="meaning">开始/着手</span></div>
+                        <div class="vocab-item"><span class="word">dispel</span> <span class="meaning">消除/驱散</span></div>
+                        <div class="vocab-item"><span class="word">by far</span> <span class="meaning">迄今为止</span></div>
+                        <div class="vocab-item"><span class="word">singular achievement</span> <span class="meaning">非凡成就</span></div>
+                        <div class="vocab-item"><span class="word">bridge builder</span> <span class="meaning">桥梁建造者</span></div>
+                        <div class="vocab-item"><span class="word">monumental</span> <span class="meaning">不朽的/巨大的</span></div>
+                    </div>
+                </div>
+
+                <div class="vocab-section">
+                    <h4>🤖 科技/AI类（Unit 5）</h4>
+                    <div class="vocab-grid">
+                        <div class="vocab-item"><span class="word">profound complexity</span> <span class="meaning">深奥的复杂性</span></div>
+                        <div class="vocab-item"><span class="word">irresistible challenge</span> <span class="meaning">不可抗拒的挑战</span></div>
+                        <div class="vocab-item"><span class="word">testing ground</span> <span class="meaning">试验场</span></div>
+                        <div class="vocab-item"><span class="word">tackle problems</span> <span class="meaning">解决问题</span></div>
+                        <div class="vocab-item"><span class="word">maintain an edge</span> <span class="meaning">保持优势</span></div>
+                        <div class="vocab-item"><span class="word">set out to</span> <span class="meaning">着手/打算</span></div>
+                        <div class="vocab-item"><span class="word">trial-and-error</span> <span class="meaning">试错法</span></div>
+                        <div class="vocab-item"><span class="word">general-purpose</span> <span class="meaning">通用的</span></div>
+                        <div class="vocab-item"><span class="word">pressing problems</span> <span class="meaning">紧迫的问题</span></div>
+                        <div class="vocab-item"><span class="word">accelerate</span> <span class="meaning">加速</span></div>
+                        <div class="vocab-item"><span class="word">breakthrough</span> <span class="meaning">突破</span></div>
+                        <div class="vocab-item"><span class="word">home in on</span> <span class="meaning">聚焦于</span></div>
+                    </div>
+                </div>
+
+                <div class="vocab-section">
+                    <h4>⚖️ 正义/责任类（Unit 6）</h4>
+                    <div class="vocab-grid">
+                        <div class="vocab-item"><span class="word">seek help</span> <span class="meaning">寻求帮助</span></div>
+                        <div class="vocab-item"><span class="word">spurned by</span> <span class="meaning">被...拒绝/蔑视</span></div>
+                        <div class="vocab-item"><span class="word">stumble upon</span> <span class="meaning">偶然发现</span></div>
+                        <div class="vocab-item"><span class="word">cryptic</span> <span class="meaning">神秘的/难以理解的</span></div>
+                        <div class="vocab-item"><span class="word">hunt through</span> <span class="meaning">搜寻</span></div>
+                        <div class="vocab-item"><span class="word">poring over</span> <span class="meaning">仔细研读</span></div>
+                        <div class="vocab-item"><span class="word">see a pattern</span> <span class="meaning">发现规律</span></div>
+                        <div class="vocab-item"><span class="word">decline to disclose</span> <span class="meaning">拒绝披露</span></div>
+                        <div class="vocab-item"><span class="word">in violation of</span> <span class="meaning">违反</span></div>
+                        <div class="vocab-item"><span class="word">on behalf of</span> <span class="meaning">代表</span></div>
+                        <div class="vocab-item"><span class="word">tainted by</span> <span class="meaning">被...污染</span></div>
+                        <div class="vocab-item"><span class="word">cease production</span> <span class="meaning">停止生产</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 黄金句型 -->
+            <div id="golden" class="section">
+                <h2 class="section-title">⭐ 课文黄金句型（直接引用/改编）</h2>
+
+                <div class="template-box">
+                    <h4><span class="icon">🌟</span> Unit 1 - 个人成长</h4>
+                    <div class="golden-sentence">
+                        <div class="en">I finally felt comfortable within myself and felt that I belonged, which was the biggest personal gain.</div>
+                        <div class="cn">我终于从内心感到舒坦，有了归属感，这是我个人最大的收获。</div>
+                        <div class="source">适用：成长感悟、自我认同类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">I was proud of myself for constantly stepping out of my comfort zone and embracing the unknown.</div>
+                        <div class="cn">令我自豪的是，我能不断跨出自己的舒适圈，拥抱未知。</div>
+                        <div class="source">适用：挑战自我、勇于尝试类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">My working holiday changed my perspective on life. It helped me to grow personally, have fun professionally and realise that I can do and be anything I desire.</div>
+                        <div class="cn">我的打工度假改变了我对于生活的看法。它让我更加成熟、享受工作，并使我认识到我能够做我想要做的事。</div>
+                        <div class="source">适用：经历改变人生类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">I will always follow my heart and do what makes me happy.</div>
+                        <div class="cn">我将始终追随我心底的欲望，做让我开心的事。</div>
+                        <div class="source">适用：结尾升华、人生态度类作文</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">💎</span> Unit 2 - 价值观/幸福</h4>
+                    <div class="golden-sentence">
+                        <div class="en">We didn't know that we weren't good enough until someone told us.</div>
+                        <div class="cn">要不是别人告诉我们，我们并不知道自己还不够好。</div>
+                        <div class="source">适用：外界评价与自我认知类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">An ordinary life is a meaningless life.</div>
+                        <div class="cn">普通的生活就是无意义的生活。（批判观点）</div>
+                        <div class="source">适用：引出对消费主义/攀比的批判</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">Stuff will never make you happy.</div>
+                        <div class="cn">物质的东西永远不会使你幸福。</div>
+                        <div class="source">适用：物质与精神类作文核心论点</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">More is never enough. If you are trying to earn money for the sake of having more money, you will never be satisfied.</div>
+                        <div class="cn">更多从来就不意味着足够。如果你为了拥有更多的钱而挣钱，你永远不会满足。</div>
+                        <div class="source">适用：知足常乐、消费主义批判</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">Contentment comes from within. True contentment and lasting joy don't come from anything money can buy.</div>
+                        <div class="cn">满足感来自内心。真正的满足和持久的喜悦并非来自于金钱买得到的东西。</div>
+                        <div class="source">适用：内心满足 vs 物质追求类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">Actions speak louder than words.</div>
+                        <div class="cn">行胜于言。</div>
+                        <div class="source">适用：行动/实践类作文</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">🏛️</span> Unit 3 - 文化自信/学术</h4>
+                    <div class="golden-sentence">
+                        <div class="en">The rapidity of China's progress in science and technology has been nothing short of astounding.</div>
+                        <div class="cn">中国科技的进步之快简直令人震惊。</div>
+                        <div class="source">适用：中国发展、科技进步类作文开头</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">He was fully focused on one, albeit Herculean task: To give China the long-overdue respect it deserves.</div>
+                        <div class="cn">他全心全意扑在一项艰巨的任务上：让中国得到早该得到的尊重。</div>
+                        <div class="source">适用：专注、使命、文化自信类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">A liberation, like going for a swim on a hot day. It gets you entirely out of the prison of [old things] and into the glittering, crystalline world of [new things].</div>
+                        <div class="cn">那是一种解放，就像在大热天去游泳。它让你完全脱离了[旧事物]的牢笼，进入了熠熠生辉、晶莹剔透的[新事物]世界。</div>
+                        <div class="source">适用：学习新事物的体验、文化冲击类作文（可替换关键词）</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">What a cave of glittering treasures was opened up! Wherever one looked, there was 'first' after 'first.'</div>
+                        <div class="cn">一个非凡的发明和发现的宝库被打开了！无论朝哪里看，都能看到一个又一个'首创'。</div>
+                        <div class="source">适用：发现、探索、中国成就类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">The world lost not only one of its greatest scholars, but also the most renowned bridge builder between the East and the West.</div>
+                        <div class="cn">世界不仅失去了最伟大的学者之一，还失去了最著名的东西交流桥梁建造者。</div>
+                        <div class="source">适用：人物评价、文化交流类作文结尾</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">🌱</span> Unit 4 - 青年成长</h4>
+                    <div class="golden-sentence">
+                        <div class="en">Today's twenty-somethings seem like a whole new breed, wonderfully full of zest for life and a sense of adventure.</div>
+                        <div class="cn">当今20多岁的年轻人似乎是全新的一族，对生活充满热情，富有冒险精神。</div>
+                        <div class="source">适用：青年特征描写类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">The winding road to adulthood is the new normal.</div>
+                        <div class="cn">通向成人的曲折蜿蜒之路是一种新常态。</div>
+                        <div class="source">适用：成长过程、人生阶段类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">It's a delicate balance.</div>
+                        <div class="cn">这是一个微妙的平衡。</div>
+                        <div class="source">适用：辩证分析、权衡取舍类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">Seeing [something] as a normal stage of life today can help ease our anxiety and maybe even allow us to celebrate [its] energy, optimism and appetite for life.</div>
+                        <div class="cn">把[某事物]看做正常的人生阶段能够有助于我们减轻焦虑，甚至可以让我们为[其]精力、乐观和强烈的生活欲望而欢欣鼓舞。</div>
+                        <div class="source">适用：理解、包容、积极看待某事物类作文（可替换关键词）</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">🤖</span> Unit 5 - 科技/AI</h4>
+                    <div class="golden-sentence">
+                        <div class="en">Go is a game of profound complexity. There are 10^170 possible positions — that's more than the number of atoms in the universe.</div>
+                        <div class="cn">围棋的规则虽然简单，下起来却极其复杂。有10^170个可能的布局——比宇宙中的原子数量还要多。</div>
+                        <div class="source">适用：描述某事物的复杂性/深度</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">Human grandmasters have maintained an edge over even the most agile computing systems.</div>
+                        <div class="cn">人类大师即便对最敏捷的计算机系统也一直保持着优势。</div>
+                        <div class="source">适用：人类智慧 vs 机器类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">AlphaGo learned to discover new strategies for itself, by playing thousands of games between its neural networks, and adjusting the connections using a trial-and-error process.</div>
+                        <div class="cn">AlphaGo学会了自行寻找新策略，通过在自己的神经网络间下成千上万局棋，通过试错流程调整连接。</div>
+                        <div class="source">适用：自主学习、创新方法类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">The methods we've used are general-purpose. Our hope is that one day they could be extended to help us address some of society's toughest and most pressing problems.</div>
+                        <div class="cn">我们使用的方法是多用途的。我们希望有一天它们能得到拓展，帮助我们解决社会上最艰巨、最迫切的问题。</div>
+                        <div class="source">适用：科技应用、解决社会问题类作文</div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">⚖️</span> Unit 6 - 正义/责任</h4>
+                    <div class="golden-sentence">
+                        <div class="en">He had been spurned not only by lawyers but also by politicians, journalists, doctors and veterinarians.</div>
+                        <div class="cn">他不仅被律师拒绝，还被政客、记者、医生和兽医拒绝。</div>
+                        <div class="source">适用：描述孤立无援、求助无门的处境</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">Bilott decided right away to take the Tennant case. It was, to him, the right thing to do.</div>
+                        <div class="cn">比洛特当即决定接受这个案子。对他而言，这是该做的事情。</div>
+                        <div class="source">适用：正义、勇气、做正确的事类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">The whole business might have ended right there. But Bilott was not satisfied.</div>
+                        <div class="cn">全部事情可能就此了结，但比洛特心有不甘。</div>
+                        <div class="source">适用：坚持、不满足现状类作文</div>
+                    </div>
+                    <div class="golden-sentence">
+                        <div class="en">Bilott never represented a corporate client again.</div>
+                        <div class="cn">比洛特从此不再代理公司客户。</div>
+                        <div class="source">适用：原则、选择、人生转折类作文结尾</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 作文结构 -->
+            <div id="structure" class="section">
+                <h2 class="section-title">🏗️ 推荐作文结构（三段式/四段式）</h2>
+
+                <div class="structure-box">
+                    <h4>📐 结构一：观点论证型（最常用）</h4>
+                    <div class="structure-step">
+                        <div class="num">1</div>
+                        <div class="text">
+                            <strong>开头段（Introduction）- 3-4句</strong><br>
+                            ① 背景引入/现象描述（用When it comes to.../In contemporary society...）<br>
+                            ② 提出争议/问题<br>
+                            ③ 明确自己的观点（用From my perspective.../I am firmly convinced that...）
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">2</div>
+                        <div class="text">
+                            <strong>主体段1（Body Paragraph 1）- 5-6句</strong><br>
+                            ① 主题句（First and foremost.../To begin with...）<br>
+                            ② 解释论点<br>
+                            ③ 举例论证（用A case in point is.../Take...for example）<br>
+                            ④ 分析例子与论点的关系<br>
+                            ⑤ 小结
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">3</div>
+                        <div class="text">
+                            <strong>主体段2（Body Paragraph 2）- 5-6句</strong><br>
+                            ① 主题句（Furthermore.../Moreover...）<br>
+                            ② 从另一角度论证（可以是对比论证、因果论证）<br>
+                            ③ 引用名言/数据/课文内容支持<br>
+                            ④ 深入分析<br>
+                            ⑤ 过渡到下一段
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">4</div>
+                        <div class="text">
+                            <strong>结尾段（Conclusion）- 3-4句</strong><br>
+                            ① 总结全文观点（用In light of the above analysis...）<br>
+                            ② 升华主题/提出建议（用It is high time that.../Only by...can we...）<br>
+                            ③ 点睛句/呼吁（引用课文金句或自己写的升华句）
+                        </div>
+                    </div>
+                </div>
+
+                <div class="structure-box">
+                    <h4>📐 结构二：对比分析型（适合辩证话题）</h4>
+                    <div class="structure-step">
+                        <div class="num">1</div>
+                        <div class="text">
+                            <strong>开头段</strong><br>
+                            现象描述 → 引出两种对立观点 → 表明自己倾向
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">2</div>
+                        <div class="text">
+                            <strong>正方观点段</strong><br>
+                            On the one hand, [正方观点]. 举例+分析。This is especially true when...（进一步论证）
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">3</div>
+                        <div class="text">
+                            <strong>反方观点段</strong><br>
+                            On the other hand, [反方观点]. 举例+分析。However, this argument fails to account for...（指出漏洞）
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">4</div>
+                        <div class="text">
+                            <strong>综合段</strong><br>
+                            承认双方合理性 → 提出自己的综合观点 → 强调平衡/取舍
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">5</div>
+                        <div class="text">
+                            <strong>结尾段</strong><br>
+                            总结 → 升华 → 呼吁
+                        </div>
+                    </div>
+                </div>
+
+                <div class="structure-box">
+                    <h4>📐 结构三：个人经历型（适合叙事+议论）</h4>
+                    <div class="structure-step">
+                        <div class="num">1</div>
+                        <div class="text">
+                            <strong>开头段</strong><br>
+                            用具体场景/感受引入 → 点明经历的主题意义<br>
+                            <em>例：My experience with [某事] changed my perspective on [主题] and helped me become a better version of myself.</em>
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">2</div>
+                        <div class="text">
+                            <strong>经历描述段</strong><br>
+                            按时间顺序描述经历 → 突出细节和感受 → 设置转折/冲突
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">3</div>
+                        <div class="text">
+                            <strong>感悟升华段</strong><br>
+                            从经历中提炼道理 → 联系普遍现象 → 论证观点<br>
+                            <em>可用课文句型：This was the [主题] that inspired me to embark on...</em>
+                        </div>
+                    </div>
+                    <div class="structure-step">
+                        <div class="num">4</div>
+                        <div class="text">
+                            <strong>结尾段</strong><br>
+                            总结收获 → 展望未来/呼吁行动 → 用金句收尾<br>
+                            <em>可用课文句型：From now on, I will always follow my heart and do what makes me happy.</em>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-box">
+                    <h4><span class="icon">🎯</span> 高分技巧</h4>
+                    <div class="template-item">
+                        <div class="english"><strong>1. 多用课文词汇和句型</strong> — 老师看到熟悉的表达会加分，说明你真的学了课文</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english"><strong>2. 至少用2-3个课文金句</strong> — 直接引用或改编，放在开头、主体或结尾</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english"><strong>3. 注意逻辑衔接</strong> — 用This brings us to.../By the same token...等过渡句</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english"><strong>4. 结尾要升华</strong> — 不要只是重复观点，要上升到人生、社会、文明层面</div>
+                    </div>
+                    <div class="template-item">
+                        <div class="english"><strong>5. 控制字数</strong> — 一般120-150词，确保结构完整，不要虎头蛇尾</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📌 建议备考策略：熟记万能句型 → 背诵黄金句型 → 掌握重点词汇 → 练习作文结构</p>
+            <p>⏰ 考试前：快速浏览所有主题预测，准备2-3个万能开头和结尾</p>
+            <p>🍀 祝考试顺利，作文拿高分！</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
